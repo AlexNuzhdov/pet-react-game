@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { Title, Wrapper } from "./ModalLevels.styled";
+import { Title, Container, Layer, Wrapper, ModalOverlow, Label } from "./ModalLevels.styled";
+//импортировать икоку
 
-const ModalLevels = () => {
+const ModalLevels = ({ handleClose }) => {
 	const navigate = useNavigate();
 
 	function handleRadioChange(selectedValue) {
@@ -22,37 +23,45 @@ const ModalLevels = () => {
 	}
 
 	return (
-		<Wrapper>
-			<p>icon</p>
-			<Title>Выбери сложность:</Title>
-			<label>
-				<input
-					type="radio"
-					name="cards"
-					value="6cards"
-					onChange={() => handleRadioChange("6cards")}
-				/>
-				Лёгкий
-			</label>
-			<label>
-				<input
-					type="radio"
-					name="cards"
-					value="9cards"
-					onChange={() => handleRadioChange("9cards")}
-				/>
-				Средний
-			</label>
-			<label>
-				<input
-					type="radio"
-					name="cards"
-					value="12cards"
-					onChange={() => handleRadioChange("12cards")}
-				/>
-				Сложный
-			</label>
-		</Wrapper>
+		<ModalOverlow>
+			<Container>
+				<Layer>
+					<Wrapper>
+						{/* сюда иконку */}
+						<p onClick={handleClose}>icon</p>
+						<Title>Выбери сложность:</Title>
+						<Label>
+							<input
+								type="radio"
+								name="cards"
+								value="6cards"
+								onChange={() => handleRadioChange("6cards")}
+							/>
+							Лёгкий
+						</Label>
+						<Label>
+							<input
+								type="radio"
+								name="cards"
+								value="9cards"
+								onChange={() => handleRadioChange("9cards")}
+							/>
+							Средний
+						</Label>
+						<Label>
+							<input
+								type="radio"
+								name="cards"
+								value="12cards"
+								onChange={() => handleRadioChange("12cards")}
+							/>
+							Сложный
+						</Label>
+					</Wrapper>
+				</Layer>
+			</Container>
+		</ModalOverlow>
+
 	)
 }
 export default ModalLevels

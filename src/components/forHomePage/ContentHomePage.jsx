@@ -20,12 +20,7 @@ const ContentHomePage = () => {
 			<div>
 				<button onClick={handleOpen}> Іграть</button>
 			</div>
-			{isOpen && (
-				<div onClick={handleClose}>
-					<ModalLevels />
-				</div>
-
-			)}
+			{isOpen && <ModalLevels handleClose={handleClose} />}
 		</>
 
 
