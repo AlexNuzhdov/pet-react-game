@@ -1,0 +1,78 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Ruda&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Typography */
+  --family: 'Ruda', sans-serif;
+  --padding: 37px;
+  --fs-s: 28px;
+  --fs-m: 30px;
+  --fs-xl: 32px;
+  --line-height: 37px;
+  --fw-light: 400;
+  --fw-normal: 500;
+  --fw-bold: 700;
+
+  /* Colors */
+
+  --color-light: rgba(255, 255, 255, 1);
+  --color-bg: rgba(245, 218, 129, 1);
+  --color-text: rgba(180, 0, 37, 1);
+  --color-text2: rgba(242, 30, 51, 1);
+  --color-dark: rgba(17, 17, 17, 0.6);
+  --color-modalbg: rgba(0, 0, 0, 0.51);
+
+}
+
+body {
+  font-family: var(--family);
+  color: var(--colors-text);
+  font-weight: var(--fw-light);
+  background-color: var(--color-bg);
+  font-style: normal;
+  font-size: var(--fs-md);
+  line-height: var(--line-height);
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+/* .card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.card-front {
+  background-color: #ddd;
+}
+
+.card-back {
+  background-color: #555;
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+} */
