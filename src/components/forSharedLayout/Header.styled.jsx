@@ -38,3 +38,8 @@ export const ContainerHeader = styled.div`
   }
 `
 
+export const HeaderWrapper = styled.div `
+  margin-top: 103px;
+  display: flex;
+  justify-content: space-between;
+`
