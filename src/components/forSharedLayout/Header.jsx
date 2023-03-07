@@ -1,24 +1,38 @@
 import iconSound from '../../assets/icons/громкость звука.svg'
-import iconRuleofGame from '../../assets/icons/кнопка _как играть__.svg'
+import iconRuleofGame from '../../assets/icons/играть.svg'
 import headerImg from '../../assets/pictures/headerImg.png'
-import {HeaderWrapper} from '../forSharedLayout/Header.styled'
-//принимает иконки, стили
-//принимает ауди(нужно найти музыку для игры)
+import {HeaderWrapper, IMGCat} from '../forSharedLayout/Header.styled'
+import React, { useState } from "react";
+import ModalPlay from "components/forSharedLayout/ModalPlayPage";
+
 
 
 const Header = () => {
 
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleOpen = () => {
+		setIsOpen(true);
+	};
+
+	const handleClose = () => {
+		setIsOpen(false);
+	};
+
 
 	return (
-
-		<HeaderWrapper>
-			<img src={iconSound} alt='some value'></img>
-			<img src={iconRuleofGame} alt='rule of game'></img>
-			<img src={headerImg}  alt='cat'></img>
-		</HeaderWrapper>
-		//флекс
-		//тут два дива(спэйс бэтвин бордер радиуса 50%) 
-		// внутри иконки 
+        <div>
+			<HeaderWrapper>
+				<img src={iconSound} alt='some value'></img>
+				<img src={iconRuleofGame} onClick={handleOpen} alt='rule of game'></img>
+				{isOpen && <ModalPlay handleClose={handleClose} />}
+			</HeaderWrapper>
+			<div>
+				<IMGCat src={headerImg}  alt='cat'></IMGCat>
+			</div>
+			
+	    </div>
+		
 
 	)
 }
