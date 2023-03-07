@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { shufflePictures } from "arraysCards/CreatorCards"
-import backdrop from "../assets/pictures/backdrop.png"
+import { shufflePictures } from "../arraysCards/shufflePictures";
+import backdrop from "../assets/pictures/backdrop.png";
+
 
 
 const Wrapper = styled.div`
@@ -31,15 +32,15 @@ transform: ${props => props.rotated ? "rotateY(0deg)" : "rotateY(180deg)"};
 opacity: ${props => props.opacity};
 `;
 
-const Card = ({ whoWin }) => {
+const Card = ({ easyArray, whoIsWin }) => {
 
 	const [pictures, setPictures] = useState([])
 	const [firstCard, setFirstCard] = useState(null);
 
 
 	useEffect(() => {
-		setPictures(shufflePictures())
-	}, [])
+		setPictures(shufflePictures(easyArray))
+	}, [easyArray])
 
 	//whoWin(pictures)
 
@@ -53,7 +54,6 @@ const Card = ({ whoWin }) => {
 			return
 		}
 		else if (firstCard.src !== newItems[index].src) {
-			console.log('logic')
 			newItems[index] = { ...newItems[index], rotated: true };
 			setPictures(newItems);
 			setTimeout(() => {
@@ -70,7 +70,6 @@ const Card = ({ whoWin }) => {
 				setPictures(arr);
 			}, 500);
 			setFirstCard(null);
-
 		}
 		else if (firstCard.src === newItems[index].src) {
 			newItems[index] = { ...newItems[index], rotated: true };
@@ -87,7 +86,9 @@ const Card = ({ whoWin }) => {
 				}
 				)
 				setFirstCard(null)
-				return setPictures(arr);
+				setPictures(arr)
+				whoIsWin(arr)
+				return
 			}, 500);
 		}
 

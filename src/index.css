@@ -45,6 +45,9 @@ body {
   margin: 0 auto;
 }
 
-
-
-
+@media (max-width: 295px) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

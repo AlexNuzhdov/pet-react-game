@@ -1,4 +1,4 @@
-import ContentNormalyLevelPage from "../components/forNormalyLevelPage /ContentNormalyLevelPage"
+import ContentNormalyLevelPage from "../components/forNormalyLevelPage/ContentNormalyLevelPage"
 
 const NormalyLevelPage = () => {
 	return (
