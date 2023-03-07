@@ -1,44 +1,38 @@
 import Card from "../Card"
 import { useState, useEffect } from "react";
-import styled from "styled-components";
+import { Title, Container } from "./ContentEasyLevelPage.styled";
+import { easyArray } from "../../arraysCards/arraysCards";
+import Timer from "components/Timer";
+import Envelope from "components/Envelope";
 
-const Container = styled.div`
-display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	column-gap: 8px;
-	row-gap: 50px;
-	height: 430px;
-	align-content: center;
-	@media (max-width: 390px){
-		column-gap: 20px;
-		row-gap: 20px;	
-	}
-`
+
 
 const ContentEasyLevelPage = () => {
 
 	const [gameOver, setGameOver] = useState(false);
+	const [timerEnded, setTimerEnded] = useState(false);
+
 
 	useEffect(() => {
 		setGameOver(false)
 	}, [])
 
-	const whoWin = (array) => {
-		const allCards = array.every(card => card.opacity === 0)
-		if (allCards) {
-			setGameOver(true);
-		}
-	}
+	// const whoWin = (array) => {
+	// 	const allCards = array.every(card => card.opacity === 0)
+	// 	if (allCards) {
+	// 		setGameOver(true);
+	// 	}
+	// }
 
 	return (
-		<>
+		<div>
 			<Container>
 				{gameOver && <div>winer</div>}
-				<Card whoWin={whoWin} />
+				<Card easyArray={easyArray} />
 			</Container>
-			<div>Таймер</div>
-		</>
+			<Title>Таймер:</Title>
+			<Envelope><Timer setTimerEnded={setTimerEnded} /> </Envelope >
+		</div>
 	);
 };
 

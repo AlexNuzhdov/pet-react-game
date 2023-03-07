@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { shufflePictures } from "arraysCards/CreatorCards"
-import backdrop from "../assets/pictures/backdrop.png"
+import { shufflePictures } from "../arraysCards/shufflePictures";
+import backdrop from "../assets/pictures/backdrop.png";
+
 
 
 const Wrapper = styled.div`
@@ -31,15 +32,15 @@ transform: ${props => props.rotated ? "rotateY(0deg)" : "rotateY(180deg)"};
 opacity: ${props => props.opacity};
 `;
 
-const Card = ({ whoWin }) => {
+const Card = ({ easyArray }) => {
 
 	const [pictures, setPictures] = useState([])
 	const [firstCard, setFirstCard] = useState(null);
 
 
 	useEffect(() => {
-		setPictures(shufflePictures())
-	}, [])
+		setPictures(shufflePictures(easyArray))
+	}, [easyArray])
 
 	//whoWin(pictures)
 
