@@ -38,3 +38,17 @@ export const ContainerHeader = styled.div`
   }
 `
 
+export const HeaderWrapper = styled.div `
+  display: flex;
+  justify-content: space-between;
+  margin-top: 103px;
+`
+
+export const IMGCat = styled.img `
+   position: absolute;
+    right: -10px;
+    bottom: -70px;
+    z-index: -999;
+    width: 410px;
+    height: 607px;
+`
