@@ -32,7 +32,7 @@ transform: ${props => props.rotated ? "rotateY(0deg)" : "rotateY(180deg)"};
 opacity: ${props => props.opacity};
 `;
 
-const Card = ({ easyArray }) => {
+const Card = ({ easyArray, whoIsWin }) => {
 
 	const [pictures, setPictures] = useState([])
 	const [firstCard, setFirstCard] = useState(null);
@@ -54,7 +54,6 @@ const Card = ({ easyArray }) => {
 			return
 		}
 		else if (firstCard.src !== newItems[index].src) {
-			console.log('logic')
 			newItems[index] = { ...newItems[index], rotated: true };
 			setPictures(newItems);
 			setTimeout(() => {
@@ -71,7 +70,6 @@ const Card = ({ easyArray }) => {
 				setPictures(arr);
 			}, 500);
 			setFirstCard(null);
-
 		}
 		else if (firstCard.src === newItems[index].src) {
 			newItems[index] = { ...newItems[index], rotated: true };
@@ -88,7 +86,9 @@ const Card = ({ easyArray }) => {
 				}
 				)
 				setFirstCard(null)
-				return setPictures(arr);
+				setPictures(arr)
+				whoIsWin(arr)
+				return
 			}, 500);
 		}
 

@@ -5,7 +5,7 @@ color: var(--color-light);
 -webkit-text-stroke: 0.7px black;
 font-size: 15px;
 line-height: 18px;
-margin: 0 auto;
+text-align: center;
 `
 export const Container = styled.div`
 display: flex;
@@ -19,4 +19,7 @@ display: flex;
 		column-gap: 20px;
 		row-gap: 20px;	
 	}
+`
+export const Wrapper = styled.div`
+width: 100%;
 `

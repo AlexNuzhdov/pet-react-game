@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 const Container = styled.div`
+margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,7 +20,7 @@ const Layer = styled.div`
 	height: 56px;
 	background-color: var(--color-light);
 	border: 1px solid var(--color-dark);
-	border-radius: 26px;
+	border-radius: 25px;
 	`
 
 const Wrapper = styled.div`
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
 	height: 50px;
 	background-color: var(--color-bg);
 	border: 1px solid var(--color-dark);
-	border-radius: 27px;
+	border-radius: 22px;
 	`
 
 const Envelope = ({ children }) => {

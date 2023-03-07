@@ -21,22 +21,22 @@ export const Layer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-width: 97%;
+width: 98%;
 height: 453px;
 background-color: var(--color-light);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 36px;
 `
 
 export const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 gap: 34px;
-width: 97%;
+width: 98%;
 height: 445px;
 background-color: var(--color-bg);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 30px;
 `
 export const ModalOverlow = styled.div`
 position: fixed;

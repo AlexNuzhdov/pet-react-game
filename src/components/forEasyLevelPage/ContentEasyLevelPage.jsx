@@ -1,6 +1,6 @@
 import Card from "../Card"
 import { useState, useEffect } from "react";
-import { Title, Container } from "./ContentEasyLevelPage.styled";
+import { Title, Container, Wrapper } from "./ContentEasyLevelPage.styled";
 import { easyArray } from "../../arraysCards/arraysCards";
 import Timer from "components/Timer";
 import Envelope from "components/Envelope";
@@ -17,22 +17,23 @@ const ContentEasyLevelPage = () => {
 		setGameOver(false)
 	}, [])
 
-	// const whoWin = (array) => {
-	// 	const allCards = array.every(card => card.opacity === 0)
-	// 	if (allCards) {
-	// 		setGameOver(true);
-	// 	}
-	// }
+	const whoIsWin = (array) => {
+		const allCards = array.every(card => card.opacity === 0)
+		if (allCards) {
+			setGameOver(true);
+		}
+	}
 
 	return (
-		<div>
+		<Wrapper>
 			<Container>
 				{gameOver && <div>winer</div>}
-				<Card easyArray={easyArray} />
+				{timerEnded && <div>the time is over</div>}
+				<Card easyArray={easyArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>
 			<Envelope><Timer setTimerEnded={setTimerEnded} /> </Envelope >
-		</div>
+		</Wrapper>
 	);
 };
 
