@@ -14,7 +14,7 @@ export default function App() {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/6cards" element={<EasyLevelPage />} />
-        <Route path="/9cards" element={<NormalyLevelPage />} />
+        <Route path="/8cards" element={<NormalyLevelPage />} />
         <Route path="/12cards" element={<HardLevelPage />} />
       </Route>
     </Routes>

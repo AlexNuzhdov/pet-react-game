@@ -14,9 +14,9 @@ justify-content: space-between;
 margin: 44px 0px 44px 0px;
 height: 430px;
 align-content: center;
-@media (max-width: 390px){
-	column-gap: 20px;
-	row-gap: 10px;	
+gap: 8px;
+@media (min-width: 340px){
+	gap:2px; 	
 }
 `
 export const Wrapper = styled.div`

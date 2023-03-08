@@ -32,17 +32,17 @@ transform: ${props => props.rotated ? "rotateY(0deg)" : "rotateY(180deg)"};
 opacity: ${props => props.opacity};
 `;
 
-const Card = ({ easyArray, whoIsWin }) => {
+const Card = ({ array, whoIsWin }) => {
 
 	const [pictures, setPictures] = useState([])
 	const [firstCard, setFirstCard] = useState(null);
 
 
 	useEffect(() => {
-		setPictures(shufflePictures(easyArray))
-	}, [easyArray])
+		setPictures(shufflePictures(array))
+	}, [array])
 
-	//whoWin(pictures)
+
 
 	const handleItemClick = (index) => {
 		const newItems = [...pictures];
