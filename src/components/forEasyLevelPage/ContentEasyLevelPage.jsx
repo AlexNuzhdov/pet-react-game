@@ -29,7 +29,7 @@ const ContentEasyLevelPage = () => {
 			<Container>
 				{gameOver && <div>winer</div>}
 				{timerEnded && <div>the time is over</div>}
-				<Card easyArray={easyArray} whoIsWin={whoIsWin} />
+				<Card array={easyArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>
 			<Envelope><Timer setTimerEnded={setTimerEnded} /> </Envelope >

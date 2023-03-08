@@ -43,13 +43,12 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   margin-top: 103px;
 `
-
-export const IMGCat = styled.img`
-  //  position: absolute;
-  //   right: -10px;
-  //   bottom: -70px;
-  //   z-index: -999;
-  //   width: 410px;
-  //   height: 607px;
-  width:100%;
+export const Circule = styled.div`
+width: 35px;
+height: 35px;
+border: 1px solid #000000;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
 `

@@ -1,7 +1,8 @@
-import iconSound from '../../assets/icons/громкость звука.svg'
+import iconSound from '../../assets/icons/speaker.svg'
+import iconNotSound from '../../assets/icons/not_speaker.svg'
 import iconRuleofGame from '../../assets/icons/играть.svg'
 
-import { HeaderWrapper, IMGCat } from '../forSharedLayout/Header.styled'
+import { HeaderWrapper, Circule } from '../forSharedLayout/Header.styled'
 import React, { useState } from "react";
 import ModalPlay from "components/forSharedLayout/ModalPlayPage";
 import melody from '../../assets/audio/audio.mp3';
@@ -11,7 +12,6 @@ const Header = () => {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
-
 
 
 	const handleOpen = () => {
@@ -34,20 +34,25 @@ const Header = () => {
 	};
 
 	return (
-		<div>
+		<>
 			<HeaderWrapper>
+
 				<audio id="my-audio" src={melody}></audio>
+
 				{isPlaying ?
-					<img src={iconSound} onClick={handleClick} alt='sound'></img>
+					<Circule>
+						<img src={iconSound} onClick={handleClick} alt='sound'></img>
+					</Circule>
 					:
-					<div onClick={handleClick}> play</div>}
+					<Circule>
+						<img src={iconNotSound} onClick={handleClick} alt='sound'></img>
+					</Circule>}
+
 				<img src={iconRuleofGame} onClick={handleOpen} alt='rule of game'></img>
 				{isOpen && <ModalPlay handleClose={handleClose} />}
 			</HeaderWrapper>
 
-		</div>
-
-
+		</>
 	)
 }
 export default Header

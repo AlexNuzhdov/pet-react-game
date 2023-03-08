@@ -11,8 +11,8 @@ const ModalLevels = ({ handleClose }) => {
 			case "6cards":
 				navigate("/6cards")
 				break;
-			case "9cards":
-				navigate("/9cards")
+			case "8cards":
+				navigate("/8cards")
 				break;
 			case "12cards":
 				navigate("/12cards")
@@ -43,7 +43,7 @@ const ModalLevels = ({ handleClose }) => {
 							<input
 								type="radio"
 								name="cards"
-								value="9cards"
+								value="8cards"
 								onChange={() => handleRadioChange("9cards")}
 							/>
 							Средний
