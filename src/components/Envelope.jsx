@@ -26,7 +26,7 @@ const Layer = styled.div`
 const Wrapper = styled.div`
 	display: flex;
 	justify-content: center;
-	aligh-items: center;
+	align-items: center;
 	width: 98%;
 	height: 50px;
 	background-color: var(--color-bg);
