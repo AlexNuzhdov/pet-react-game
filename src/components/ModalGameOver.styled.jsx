@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const Container = styled.div`
 display: flex;
 justify-content: center;
@@ -28,6 +27,7 @@ export const Wrapper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 60px;
 width: 97%;
 height: 445px;
 background-color: var(--color-bg);
@@ -54,8 +54,7 @@ line-height: 37px;
 text-align: center;
 color: var(--color-text);
 -webkit-text-stroke: 1px black;
-margin: 0px;
-z-index: 55;
+margin: 50px 0px 71px 0px;
 `
 export const IconCross = styled.img`
 position: absolute;
@@ -66,8 +65,20 @@ top: 15px;
 export const ModalBG = styled.img`
 width: 80px;
 position: absolute;
-top: 50%;
+top: 144px;
 left: 50%;
 transform: translate(-50%,-50%);
+`
+
+export const Title = styled.p`
+font-size: 30px;
+line-height: 37px;
+color: var(--color-text);
+-webkit-text-stroke: 1px black;
+margin: 0;
+text-align: center;
+@media (max-width: 390px){
+	font-size: 22px;	
+}
 `
 

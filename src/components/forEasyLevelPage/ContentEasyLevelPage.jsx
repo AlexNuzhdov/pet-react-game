@@ -28,8 +28,8 @@ const ContentEasyLevelPage = () => {
 	return (
 		<Wrapper>
 			<Container>
-				{gameOver && <ModalGameOver />}
-				{timerEnded && <div>the time is over</div>}
+				{gameOver && <p>winer</p>}
+				{timerEnded && <ModalGameOver />}
 				<Card array={easyArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>

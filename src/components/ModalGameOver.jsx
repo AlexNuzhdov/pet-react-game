@@ -1,10 +1,11 @@
-import { Container, Layer, Wrapper, ModalOverlow, Info, IconCross, ModalBG } from "./ModalGameOver.styled";
+import { Container, Layer, Wrapper, ModalOverlow, Info, IconCross, ModalBG, Title } from "./ModalGameOver.styled";
 import ModalClose from '../assets/icons/cross.svg';
 import BGModal from '../assets/pictures/BGModal.png';
+import Envelope from "./Envelope";
+import { Link } from "react-router-dom";
 
 
 const ModalGameOver = ({ handleClose }) => {
-	// const navigate = useNavigate();
 
 
 
@@ -13,13 +14,21 @@ const ModalGameOver = ({ handleClose }) => {
 			<Container>
 				<Layer>
 					<Wrapper>
-						<IconCross src={ModalClose} onClick={handleClose} alt='icon' width="35px"></IconCross>
-						<ModalBG src={BGModal} onClick={handleClose} alt='icon' width="35px"></ModalBG>
+						<Link to="/">
+							<IconCross src={ModalClose} alt='icon' width="35px"></IconCross>
+						</Link>
 
-						<Info>
-							Не получилось!
-							попробуй сыграть снова!
-						</Info>
+						<ModalBG src={BGModal} onClick={handleClose} alt='icon' width="35px"></ModalBG>
+						<div style={{ zIndex: "45" }}>
+							<Info>
+								Не получилось!
+								Попробуй сыграть снова!
+							</Info>
+							<div onClick={() => { window.location.reload() }}>
+								<Envelope><Title>Играть снова</Title></Envelope>
+							</div>
+						</div>
+
 					</Wrapper>
 				</Layer>
 			</Container>
