@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export const Title = styled.p`
-color: var(--color-text);
--webkit-text-stroke: 1px black;
-margin: 0px 0px 7px 0px;
-`
+
 
 export const Container = styled.div`
 display: flex;
@@ -30,13 +26,14 @@ border-radius: 40px;
 
 export const Wrapper = styled.div`
 display: flex;
-flex-direction: column;
-gap: 34px;
+justify-content: center;
+align-items: center;
 width: 97%;
 height: 445px;
 background-color: var(--color-bg);
 border: 1px solid var(--color-dark);
 border-radius: 40px;
+position: relative;
 `
 export const ModalOverlow = styled.div`
 position: fixed;
@@ -50,29 +47,27 @@ justify-content: center;
 align-items: center;
 z-index: 50;
 `
-export const Label = styled.label`
-color: var(--color-text);
--webkit-text-stroke: 1px black;
-margin-left: 8px;
-`
 
-export const H1 = styled.h1`
-font-family: 'Ruda';
-font-style: normal;
-font-weight: 400;
+export const Info = styled.h1`
 font-size: 30px;
 line-height: 37px;
 text-align: center;
-color: #B40025;
+color: var(--color-text);
 -webkit-text-stroke: 1px black;
 margin: 0px;
-
+z-index: 55;
+`
+export const IconCross = styled.img`
+position: absolute;
+right: 15px;
+top: 15px;
 `
 
-export const IMGCloseWrapper = styled.div`
-    display: flex;
-    justify-content: right;
-    padding-right: 17px;
-    padding-top: 21px;
-
+export const ModalBG = styled.img`
+width: 80px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
 `
+
