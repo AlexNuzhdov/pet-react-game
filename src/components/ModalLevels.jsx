@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Title, Container, Layer, Wrapper, ModalOverlow, ChekboxContainer } from "./ModalLevels.styled";
+
+import { Title, Container, Layer, Wrapper, ModalOverlow, ChekboxContainer, IconCross } from "./ModalLevels.styled";
 //импортировать икоку
+import cross from "../assets/icons/cross.svg"
+
 
 const ModalLevels = ({ handleClose }) => {
 	const navigate = useNavigate();
@@ -27,8 +30,7 @@ const ModalLevels = ({ handleClose }) => {
 			<Container>
 				<Layer>
 					<Wrapper>
-						{/* сюда иконку */}
-						<p onClick={handleClose}>icon</p>
+						<IconCross src={cross} onClick={handleClose} alt='modal close' width="35px"></IconCross>
 						<Title>Выбери сложность:</Title>
 						<ChekboxContainer>
 							<input
@@ -47,7 +49,7 @@ const ModalLevels = ({ handleClose }) => {
 								id="radio-2"
 								name="cards"
 								value="8cards"
-								onChange={() => handleRadioChange("9cards")}
+								onChange={() => handleRadioChange("8cards")}
 							/>
 							<label  for="radio-2" >Средний</label>
 							

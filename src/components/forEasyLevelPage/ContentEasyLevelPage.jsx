@@ -4,6 +4,7 @@ import { Title, Container, Wrapper } from "./ContentEasyLevelPage.styled";
 import { easyArray } from "../../arraysCards/arraysCards";
 import Timer from "components/Timer";
 import Envelope from "components/Envelope";
+import ModalGameOver from "components/ModalGameOver";
 
 
 
@@ -27,8 +28,8 @@ const ContentEasyLevelPage = () => {
 	return (
 		<Wrapper>
 			<Container>
-				{gameOver && <div>winer</div>}
-				{timerEnded && <div>the time is over</div>}
+				{gameOver && <p>winer</p>}
+				{timerEnded && <ModalGameOver />}
 				<Card array={easyArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>

@@ -10,6 +10,7 @@ margin: 0 auto;
 	background-color: var(--color-text);
 	border: 1px solid var(--color-dark);
 	border-radius: 28px;
+	cursor: pointer;
 	`
 
 const Layer = styled.div`

@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Title = styled.p`
 color: var(--color-text);
 -webkit-text-stroke: 1px black;
-margin: 0px 0px 7px 0px;
+margin: 96px 0px 7px 0px;
+text-align: center;
 `
 
 export const Container = styled.div`
@@ -37,6 +38,7 @@ height: 445px;
 background-color: var(--color-bg);
 border: 1px solid var(--color-dark);
 border-radius: 30px;
+position: relative;
 `
 export const ModalOverlow = styled.div`
 position: fixed;
@@ -54,6 +56,7 @@ color: var(--color-text);
 -webkit-text-stroke: 1px black;
 margin-left: 8px;
 `
+
 
 export const ChekboxContainer = styled.div`
 margin-left: 20px;
@@ -97,5 +100,11 @@ label::before {
     text-align: center;
     transition: all 250ms ease;
 }
+
+
+export const IconCross = styled.img`
+position: absolute;
+right: 15px;
+top: 15px;
 
 `
