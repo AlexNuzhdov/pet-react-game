@@ -4,7 +4,6 @@ import { shufflePictures } from "../arraysCards/shufflePictures";
 import backdrop from "../assets/pictures/backdrop.png";
 
 
-
 const Wrapper = styled.div`
 position: relative;
 width: 100px;
@@ -93,7 +92,7 @@ const Card = ({ array, whoIsWin }) => {
 		}
 
 	}
-
+	console.log(pictures, firstCard)
 	return (
 		<>
 			{pictures.map((el, index) => (

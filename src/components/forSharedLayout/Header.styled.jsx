@@ -42,6 +42,11 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 103px;
+  @media (max-width: 390px) {
+
+	 padding-left: 20px;
+	 padding-right: 20px;
+  }
 `
 export const Circule = styled.div`
 width: 35px;
