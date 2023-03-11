@@ -5,7 +5,11 @@ import Envelope from "./Envelope";
 import { Link } from "react-router-dom";
 
 
+
+
 const ModalGameOver = ({ handleClose, gameOver }) => {
+
+
 
 	const textModal = !gameOver ? "Не получилось!Попробуй сыграть снова!" : 'У тебя отлично получилось!Сыграем еще раз?'
 
@@ -22,7 +26,7 @@ const ModalGameOver = ({ handleClose, gameOver }) => {
 							<Info>
 								{textModal}
 							</Info>
-							<div onClick={() => { window.location.reload() }}>
+							<div onClick={console.log('event')}>
 								<Envelope><Title>Играть снова</Title></Envelope>
 							</div>
 						</div>

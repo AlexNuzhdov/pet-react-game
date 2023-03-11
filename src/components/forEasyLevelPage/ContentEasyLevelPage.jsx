@@ -14,6 +14,7 @@ const ContentEasyLevelPage = () => {
 	const [timerEnded, setTimerEnded] = useState(false);
 	const [modal, setModal] = useState(true);
 
+
 	useEffect(() => {
 		setGameOver(false)
 	}, [])
