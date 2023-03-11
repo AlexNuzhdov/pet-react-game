@@ -10,8 +10,26 @@ import melody from '../../assets/audio/audio.mp3';
 
 const Header = () => {
 
+
+
+
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
+
+
+	// useEffect(() => {
+	// 	const audio = document.getElementById('my-audio');
+	// 	const storedIsPlaying = localStorage.getItem('isPlaying');
+	// 	if (storedIsPlaying) {
+	// 		setIsPlaying(true);
+	// 		audio.play();
+	// 	}
+	// }, []);
+
+	// useEffect(() => {
+	// 	localStorage.setItem('isPlaying', isPlaying.toString());
+	// }, [isPlaying]);
 
 
 	const handleOpen = () => {
@@ -23,15 +41,20 @@ const Header = () => {
 	};
 
 	const handleClick = () => {
+
 		const audio = document.getElementById('my-audio');
 		if (isPlaying) {
 			audio.pause();
+			//localStorage.setItem('hasSound', false);
 			setIsPlaying(false);
 		} else {
 			audio.play();
+			localStorage.setItem('isPlaying', true);
 			setIsPlaying(true);
 		}
 	};
+
+
 
 	return (
 		<>

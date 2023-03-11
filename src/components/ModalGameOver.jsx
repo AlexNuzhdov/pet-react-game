@@ -5,9 +5,9 @@ import Envelope from "./Envelope";
 import { Link } from "react-router-dom";
 
 
-const ModalGameOver = ({ handleClose }) => {
+const ModalGameOver = ({ handleClose, gameOver }) => {
 
-
+	const textModal = !gameOver ? "Не получилось!Попробуй сыграть снова!" : 'У тебя отлично получилось!Сыграем еще раз?'
 
 	return (
 		<ModalOverlow onClick={handleClose} >
@@ -17,12 +17,10 @@ const ModalGameOver = ({ handleClose }) => {
 						<Link to="/">
 							<IconCross src={ModalClose} alt='icon' width="35px"></IconCross>
 						</Link>
-
 						<ModalBG src={BGModal} onClick={handleClose} alt='icon' width="35px"></ModalBG>
 						<div style={{ zIndex: "45" }}>
 							<Info>
-								Не получилось!
-								Попробуй сыграть снова!
+								{textModal}
 							</Info>
 							<div onClick={() => { window.location.reload() }}>
 								<Envelope><Title>Играть снова</Title></Envelope>
@@ -32,7 +30,7 @@ const ModalGameOver = ({ handleClose }) => {
 					</Wrapper>
 				</Layer>
 			</Container>
-		</ModalOverlow>
+		</ModalOverlow >
 
 	)
 }

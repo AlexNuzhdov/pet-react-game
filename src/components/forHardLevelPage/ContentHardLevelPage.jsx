@@ -4,14 +4,14 @@ import { Title, Container, Wrapper } from "./ContentHardLevelPage.styled";
 import { hardArray } from "../../arraysCards/arraysCards";
 import Timer from "components/Timer";
 import Envelope from "components/Envelope";
-
+import ModalGameOver from "../ModalGameOver";
 
 
 const ContentHardLevelPage = () => {
 
 	const [gameOver, setGameOver] = useState(false);
 	const [timerEnded, setTimerEnded] = useState(false);
-
+	const [modal, setModal] = useState(true);
 
 	useEffect(() => {
 		setGameOver(false)
@@ -21,14 +21,15 @@ const ContentHardLevelPage = () => {
 		const allCards = array.every(card => card.opacity === 0)
 		if (allCards) {
 			setGameOver(true);
+			setModal(false)
 		}
 	}
 
 	return (
 		<Wrapper>
 			<Container>
-				{gameOver && <div>winer</div>}
-				{timerEnded && <div>the time is over</div>}
+				{gameOver && <ModalGameOver gameOver={gameOver} />}
+				{timerEnded && modal && <ModalGameOver gameOver={gameOver} />}
 				<Card array={hardArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>

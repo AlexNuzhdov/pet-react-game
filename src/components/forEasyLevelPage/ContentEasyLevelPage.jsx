@@ -12,7 +12,7 @@ const ContentEasyLevelPage = () => {
 
 	const [gameOver, setGameOver] = useState(false);
 	const [timerEnded, setTimerEnded] = useState(false);
-
+	const [modal, setModal] = useState(true);
 
 	useEffect(() => {
 		setGameOver(false)
@@ -22,14 +22,15 @@ const ContentEasyLevelPage = () => {
 		const allCards = array.every(card => card.opacity === 0)
 		if (allCards) {
 			setGameOver(true);
+			setModal(false)
 		}
 	}
 
 	return (
 		<Wrapper>
 			<Container>
-				{gameOver && <p>winer</p>}
-				{timerEnded && <ModalGameOver />}
+				{gameOver && <ModalGameOver gameOver={gameOver} />}
+				{timerEnded && modal && <ModalGameOver gameOver={gameOver} />}
 				<Card array={easyArray} whoIsWin={whoIsWin} />
 			</Container>
 			<Title>Таймер:</Title>
