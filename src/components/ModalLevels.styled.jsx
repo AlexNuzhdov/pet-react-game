@@ -56,8 +56,58 @@ color: var(--color-text);
 -webkit-text-stroke: 1px black;
 margin-left: 8px;
 `
+
+
+
+
+export const ChekboxContainer = styled.div`
+margin-left: 20px;
+
+label {
+font-family: 'Ruda';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 37px;
+color: #B40025;
+-webkit-text-stroke: 1px black;
+
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+}
+
+input:checked {
+    &+label::before {
+        background-color: red;
+        box-shadow: inset 0 0 0 6px  #FED650;
+    }
+}
+
+label::before {
+    content: '';
+    background:  #F5DA81;
+    border-radius: 100%;
+    border: 1px solid black;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0px;
+    margin-right: 18px; 
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+
+
 export const IconCross = styled.img`
 position: absolute;
 right: 15px;
 top: 15px;
+
 `
