@@ -10,7 +10,7 @@ color: var(--color-text);
 
 
 const Timer = ({ setTimerEnded }) => {
-	const [count, setCount] = useState(15);
+	const [count, setCount] = useState(20);
 
 
 	useEffect(() => {

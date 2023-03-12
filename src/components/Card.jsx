@@ -92,7 +92,7 @@ const Card = ({ array, whoIsWin }) => {
 		}
 
 	}
-	console.log(pictures, firstCard)
+
 	return (
 		<>
 			{pictures.map((el, index) => (

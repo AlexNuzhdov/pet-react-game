@@ -58,6 +58,8 @@ margin-left: 8px;
 `
 
 
+
+
 export const ChekboxContainer = styled.div`
 margin-left: 20px;
 
@@ -102,6 +104,7 @@ label::before {
 }
 
 `
+
 
 export const IconCross = styled.img`
 position: absolute;

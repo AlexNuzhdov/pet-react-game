@@ -8,10 +8,25 @@ import ModalPlay from "components/forSharedLayout/ModalPlayPage";
 import melody from '../../assets/audio/audio.mp3';
 
 
+
 const Header = () => {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
+
+
+	// useEffect(() => {
+	// 	const audio = document.getElementById('my-audio');
+	// 	const storedIsPlaying = localStorage.getItem('isPlaying');
+	// 	if (storedIsPlaying) {
+	// 		setIsPlaying(true);
+	// 		audio.play();
+	// 	}
+	// }, []);
+
+	// useEffect(() => {
+	// 	localStorage.setItem('isPlaying', isPlaying.toString());
+	// }, [isPlaying]);
 
 
 	const handleOpen = () => {
@@ -23,21 +38,26 @@ const Header = () => {
 	};
 
 	const handleClick = () => {
+
 		const audio = document.getElementById('my-audio');
 		if (isPlaying) {
 			audio.pause();
 			setIsPlaying(false);
 		} else {
 			audio.play();
+			localStorage.setItem('isPlaying', true);
 			setIsPlaying(true);
 		}
 	};
 
+
+
 	return (
 		<>
+
 			<HeaderWrapper>
 
-				<audio id="my-audio" src={melody}></audio>
+				<audio loop id="my-audio" src={melody}></audio>
 
 				{isPlaying ?
 					<Circule>
@@ -51,7 +71,6 @@ const Header = () => {
 				<img src={iconRuleofGame} onClick={handleOpen} alt='rule of game'></img>
 				{isOpen && <ModalPlay handleClose={handleClose} />}
 			</HeaderWrapper>
-
 		</>
 	)
 }
