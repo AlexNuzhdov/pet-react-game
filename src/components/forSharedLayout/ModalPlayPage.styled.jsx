@@ -25,7 +25,7 @@ width: 97%;
 height: 453px;
 background-color: var(--color-light);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 36px;
 `
 
 export const Wrapper = styled.div`
@@ -36,7 +36,7 @@ width: 97%;
 height: 445px;
 background-color: var(--color-bg);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 32px;
 `
 export const ModalOverlow = styled.div`
 position: fixed;
@@ -56,23 +56,18 @@ color: var(--color-text);
 margin-left: 8px;
 `
 
-export const H1 = styled.h1`
-font-family: 'Ruda';
-font-style: normal;
-font-weight: 400;
+export const Text = styled.h1`
 font-size: 30px;
 line-height: 37px;
 text-align: center;
 color: #B40025;
 -webkit-text-stroke: 1px black;
 margin: 0px;
-
 `
 
 export const IMGCloseWrapper = styled.div`
-    display: flex;
-    justify-content: right;
-    padding-right: 17px;
-    padding-top: 21px;
-
+display: flex;
+justify-content: right;
+padding-right: 17px;
+padding-top: 21px;
 `

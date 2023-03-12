@@ -1,4 +1,4 @@
-import Card from "../Card"
+import Card from "../Card";
 import { useState, useEffect } from "react";
 import { Title, Container, Wrapper } from "./ContentHardLevelPage.styled";
 import { hardArray } from "../../arraysCards/arraysCards";
@@ -55,9 +55,6 @@ const ContentHardLevelPage = () => {
 				<Envelope><Timer setTimerEnded={setTimerEnded} /> </Envelope >
 			</Wrapper>
 		</div>
-
 	);
 };
-
-
 export default ContentHardLevelPage;

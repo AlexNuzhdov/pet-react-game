@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 
-
 export const Wrapper = styled.p`
 display: flex;
 flex-direction: row;
 gap: 34px;
 `
-
 export const Title = styled.p`
 font-size: 30px;
 line-height: 37px;

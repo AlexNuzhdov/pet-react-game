@@ -20,7 +20,7 @@ width: 97%;
 height: 453px;
 background-color: var(--color-light);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 36px;
 `
 
 export const Wrapper = styled.div`
@@ -32,7 +32,7 @@ width: 97%;
 height: 445px;
 background-color: var(--color-bg);
 border: 1px solid var(--color-dark);
-border-radius: 40px;
+border-radius: 32px;
 position: relative;
 `
 export const ModalOverlow = styled.div`
@@ -53,7 +53,7 @@ font-size: 30px;
 line-height: 37px;
 text-align: center;
 color: var(--color-text);
--webkit-text-stroke: 1px black;
+-webkit-text-stroke: 0.5px black;
 margin: 50px 0px 71px 0px;
 `
 export const IconCross = styled.img`

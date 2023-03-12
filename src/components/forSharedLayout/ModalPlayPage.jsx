@@ -1,12 +1,8 @@
-// import { useNavigate } from "react-router-dom";
-import { Container, Layer, Wrapper, ModalOverlow, H1, IMGCloseWrapper } from "./ModalPlayPage.styled";
-import ModalClose from '../../assets/icons/cross.svg'
-//импортировать икоку
+import { Container, Layer, Wrapper, ModalOverlow, Text, IMGCloseWrapper } from "./ModalPlayPage.styled";
+import ModalClose from "../../assets/icons/cross.svg";
+
 
 const ModaPlay = ({ handleClose }) => {
-	// const navigate = useNavigate();
-
-
 
 	return (
 		<ModalOverlow onClick={handleClose} >
@@ -14,14 +10,13 @@ const ModaPlay = ({ handleClose }) => {
 				<Layer>
 					<Wrapper>
 						<IMGCloseWrapper>
-							<img src={ModalClose} onClick={handleClose} alt='modal close' width="35px"></img>
+							<img src={ModalClose} onClick={handleClose} alt="close" width="35px"></img>
 						</IMGCloseWrapper>
-						<H1>Щёлкай по квадратикам, запоминай, что под ними изображено, <br /> и находи пары одинаковых картинок.</H1>
+						<Text>Щёлкай по квадратикам, запоминай, что под ними изображено, <br /> и находи пары одинаковых картинок.</Text>
 					</Wrapper>
 				</Layer>
 			</Container>
 		</ModalOverlow>
-
 	)
 }
-export default ModaPlay
+export default ModaPlay;

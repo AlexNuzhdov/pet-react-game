@@ -1,4 +1,4 @@
-import Card from "../Card"
+import Card from "../Card";
 import { useState, useEffect } from "react";
 import { Title, Container, Wrapper } from "./ContentNormalyLevelPage.styled";
 import { normalyArray } from "../../arraysCards/arraysCards";
@@ -41,7 +41,6 @@ const ContentNormalyLevelPage = () => {
 						handleClick={handleClick}
 						setModal={setModal}
 					/>}
-
 					{timerEnded && modal && <ModalGameOver
 						gameOver={gameOver}
 						setTimerEnded={setTimerEnded}
@@ -55,7 +54,6 @@ const ContentNormalyLevelPage = () => {
 				<Envelope><Timer setTimerEnded={setTimerEnded} /> </Envelope >
 			</Wrapper>
 		</div>
-
 	);
 };
 
