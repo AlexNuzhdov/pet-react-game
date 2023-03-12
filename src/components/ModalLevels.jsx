@@ -1,21 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { Title, Container, Layer, Wrapper, ModalOverlow, Label, IconCross } from "./ModalLevels.styled";
-import cross from "../assets/icons/cross.svg"
+import cross from "../assets/icons/cross.svg";
 
 const ModalLevels = ({ handleClose }) => {
 	const navigate = useNavigate();
-
+	const handleNavigate = (value) => {
+		setTimeout(() => {
+			navigate(value)
+		}, 500);
+	}
 	function handleRadioChange(selectedValue) {
 
 		switch (selectedValue) {
 			case "6cards":
-				navigate("/6cards")
+				handleNavigate(selectedValue)
 				break;
 			case "8cards":
-				navigate("/8cards")
+				handleNavigate(selectedValue)
 				break;
 			case "12cards":
-				navigate("/12cards")
+				handleNavigate(selectedValue)
 				break;
 			default:
 				break;
@@ -60,7 +64,6 @@ const ModalLevels = ({ handleClose }) => {
 				</Layer>
 			</Container>
 		</ModalOverlow>
-
 	)
 }
-export default ModalLevels
+export default ModalLevels;

@@ -56,7 +56,6 @@ color: var(--color-text);
 -webkit-text-stroke: 1px black;
 margin-left: 8px;
 `
-
 export const IconCross = styled.img`
 position: absolute;
 right: 15px;

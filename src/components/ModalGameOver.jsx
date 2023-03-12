@@ -6,31 +6,39 @@ import { Link } from "react-router-dom";
 
 
 
+const ModalGameOver = ({
+	handleClose,
+	gameOver,
+	handleClick,
+	setGameOver,
+	setTimerEnded,
+	setModal }) => {
 
-const ModalGameOver = ({ handleClose, gameOver }) => {
-
-
-
-	const textModal = !gameOver ? "Не получилось!Попробуй сыграть снова!" : 'У тебя отлично получилось!Сыграем еще раз?'
+	const playAgain = () => {
+		handleClick();
+		setGameOver(false);
+		setTimerEnded(false);
+		setModal(true);
+	}
+	const textModal = !gameOver ? "Не получилось!Попробуй сыграть снова!" : "У тебя отлично получилось!Сыграем еще раз?"
 
 	return (
-		<ModalOverlow onClick={handleClose} >
+		<ModalOverlow >
 			<Container>
 				<Layer>
 					<Wrapper>
 						<Link to="/">
 							<IconCross src={ModalClose} alt='icon' width="35px"></IconCross>
 						</Link>
-						<ModalBG src={BGModal} onClick={handleClose} alt='icon' width="35px"></ModalBG>
+						<ModalBG src={BGModal} alt='icon' width="35px"></ModalBG>
 						<div style={{ zIndex: "45" }}>
 							<Info>
 								{textModal}
 							</Info>
-							<div onClick={console.log('event')}>
+							<div onClick={playAgain}>
 								<Envelope><Title>Играть снова</Title></Envelope>
 							</div>
 						</div>
-
 					</Wrapper>
 				</Layer>
 			</Container>
