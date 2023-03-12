@@ -101,10 +101,10 @@ label::before {
     transition: all 250ms ease;
 }
 
+`
 
 export const IconCross = styled.img`
 position: absolute;
 right: 15px;
 top: 15px;
-
 `
