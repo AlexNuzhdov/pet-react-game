@@ -1,9 +1,9 @@
-import EasyLevelPage from 'pages/EasyLevelPage';
-import HardLevelPage from 'pages/HardLevelPage';
-import HomePage from 'pages/HomePage';
-import NormalyLevelPage from 'pages/NormalyLevelPage';
+import EasyLevelPage from "pages/EasyLevelPage";
+import HardLevelPage from "pages/HardLevelPage";
+import HomePage from "pages/HomePage";
+import NormalyLevelPage from "pages/NormalyLevelPage";
 import { Route, Routes } from "react-router-dom";
-import { SharedLayout } from './forSharedLayout/SharedLayout';
+import { SharedLayout } from "./forSharedLayout/SharedLayout";
 
 
 

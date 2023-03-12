@@ -1,60 +1,27 @@
-import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { shufflePictures } from "../arraysCards/shufflePictures";
 import backdrop from "../assets/pictures/backdrop.png";
+import { Wrapper, CardFront, CardBack } from "./Card.styled";
 
-
-const Wrapper = styled.div`
-position: relative;
-width: 100px;
-height: 100px;
-perspective: 600px;
-`;
-
-const CardFront = styled.div`
-position: absolute;
-width: 100%;
-height: 100%;
-backface-visibility: hidden;
-transition: transform 0.5s;
-transform: ${props => props.rotated ? "rotateY(180deg)" : null};
-opacity: ${props => props.opacity};
-`;
-
-const CardBack = styled.div`
-position: absolute;
-width: 100%;
-height: 100%;
-backface-visibility: hidden;
-transition: transform 0.5s;
-transform: ${props => props.rotated ? "rotateY(0deg)" : "rotateY(180deg)"};
-opacity: ${props => props.opacity};
-`;
 
 const Card = ({ array, whoIsWin }) => {
 
 	const [pictures, setPictures] = useState([])
 	const [firstCard, setFirstCard] = useState(null);
 
-
 	useEffect(() => {
 		setPictures(shufflePictures(array))
 	}, [array])
 
-
-
 	const handleItemClick = (index) => {
 		const newItems = [...pictures];
-
+		newItems[index] = { ...newItems[index], rotated: true };
+		setPictures(newItems);
 		if (firstCard === null) {
-			newItems[index] = { ...newItems[index], rotated: true };
-			setPictures(newItems);
 			setFirstCard(newItems[index]);
 			return
 		}
 		else if (firstCard.src !== newItems[index].src) {
-			newItems[index] = { ...newItems[index], rotated: true };
-			setPictures(newItems);
 			setTimeout(() => {
 				const arr = newItems.map(card => {
 					if (card.rotated) {
@@ -71,8 +38,6 @@ const Card = ({ array, whoIsWin }) => {
 			setFirstCard(null);
 		}
 		else if (firstCard.src === newItems[index].src) {
-			newItems[index] = { ...newItems[index], rotated: true };
-			setPictures(newItems);
 			setTimeout(() => {
 				const arr = newItems.map(card => {
 					if (card.rotated) {
@@ -90,7 +55,6 @@ const Card = ({ array, whoIsWin }) => {
 				return
 			}, 500);
 		}
-
 	}
 
 	return (
